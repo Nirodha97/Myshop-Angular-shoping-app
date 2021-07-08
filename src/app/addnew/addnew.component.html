@@ -1,0 +1,71 @@
+<div >
+<div class="logintext" >
+  <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+  <h3>ADD NEW ITEM</h3>
+</div>
+
+<div style="text-align: center; padding-top: 5em; ">
+<div class="input" >
+<mat-form-field appearance="outline" class="input-text">
+  <mat-label>Title</mat-label>
+  <input [formControl]="title" matInput placeholder="" >
+  <mat-error *ngIf="title.invalid">{{getErrorMessage()}}</mat-error>
+  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+  <!-- <mat-hint>Hint</mat-hint> -->
+</mat-form-field>
+</div>
+
+<div  class="input" >
+  <mat-form-field appearance="outline"  class="input-text" >
+      <mat-label>Price (LKR)</mat-label>
+      <input matInput placeholder="" [formControl]="price">
+      <mat-error *ngIf="price.invalid">{{getErrorMessage()}}</mat-error>
+      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+  </div>
+
+  <div  class="input">
+      <mat-form-field appearance="outline"  class="input-text">
+          <mat-label>Category</mat-label>
+          <mat-select [formControl]="category">
+            <mat-option *ngFor="let category of categories" [value]="category.value" >
+              {{category.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="category.hasError('required')">Please choose an category</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div  class="input">
+          <mat-form-field appearance="outline"  class="input-text">
+              <mat-label>Brand Name</mat-label>
+              <input matInput placeholder=""  [formControl]="brand">
+              <mat-error *ngIf="brand.invalid">{{getErrorMessage()}}</mat-error>
+              <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+              <!-- <mat-hint>Hint</mat-hint> -->
+            </mat-form-field>
+          </div>
+
+          <div  class="input">
+              <mat-form-field appearance="outline"  class="input-text" > 
+                  <mat-label>Description</mat-label>
+                  <textarea matInput placeholder="" style="height: 100px;"  [formControl]="description"></textarea>
+                  <mat-error *ngIf="description.invalid">{{getErrorMessage()}}</mat-error>
+                  <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                  <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+              </div>
+
+              <div  class="input" style="margin-left: 0px;">
+                <input type="file" class="btn btn-success btn-sm" (change)="onselectFile($event)" style="width: 200px; margin-left: 0px; ">
+                <div>
+                <img mat-card-image  [src]="url" style="height: 140px; width: 180px; margin-top: 2em;">
+                </div>
+                  </div>
+  <div style="margin-bottom: 10em; margin-top: 3em;">
+      <button mat-flat-button color="primary" (click)="submit()">SUBMIT</button>
+     
+  </div>
+</div>
+</div>

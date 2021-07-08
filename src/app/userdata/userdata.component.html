@@ -1,0 +1,122 @@
+<div >
+    <div class="logintext" >
+      <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+      <h3>EDIT PROFILE DETAILS</h3>
+    </div>
+    
+    <div style="text-align: center; padding-top: 4em;">
+        <img class="user" mat-card-image src="/assets/user1.png" alt="Shoping Item" style="height: 120px; width: 120px;">
+        <div>
+            <button mat-stroked-button color="primary" style="font-size: 12px; margin-top: 5px;" class="btn">CHANGE PHOTO</button>
+        </div>
+       
+    </div>
+   
+    <div style=" padding: 0.5; padding-top: 1em; padding-bottom: 5em;">
+    <mat-card style="margin: 1em;" *ngFor="let userDetail of userDetails">
+        <div style="font-size: 14px; margin: 10px;">
+            <span>PERSONAL DETAILS</span>
+            <span style="float: right;" (click)="editDetails1()" class="edit" *ngIf="edit1">EDIT</span>
+            <span style="float: right;" (click)="saveDetails1()" class="save" *ngIf="save1">SAVE</span>
+            
+        </div>
+        <div class="input" *ngIf="save1">
+            <mat-form-field appearance="outline" class="input-text">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="" style=" width: 100%;  "  [disabled]="this.isDisabled1" [formControl]="nameControl"   >
+            </mat-form-field>
+            </div>
+
+            <div class="input" *ngIf="edit1" >
+              <mat-form-field appearance="outline" class="input-text">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="" style=" width: 100%;  " [disabled]="this.isDisabled1" value="{{userDetail.name}}"  >
+              </mat-form-field>
+              </div>
+
+            
+        
+              <div class="input" *ngIf="save1">
+                <mat-form-field appearance="outline" class="input-text">
+                  <mat-label>Email Address</mat-label>
+                  <input matInput placeholder="" style=" width: 100%;  "  [disabled]="this.isDisabled1" [formControl]="emailControl"   >
+                </mat-form-field>
+                </div>
+
+            <div class="input" *ngIf="edit1">
+                <mat-form-field appearance="outline" class="input-text">
+                  <mat-label>Email Address</mat-label>
+                  <input matInput placeholder="" style=" width: 100%; "  [disabled]="this.isDisabled1" value="{{userDetail.email}}"  >
+                </mat-form-field>
+                </div>
+        
+
+                <div class="input" *ngIf="save1">
+                  <mat-form-field appearance="outline" class="input-text">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="" style=" width: 100%;  "  [disabled]="this.isDisabled1" [formControl]="addressControl"   >
+                  </mat-form-field>
+                  </div>
+
+            <div class="input" *ngIf="edit1">
+            <mat-form-field appearance="outline" class="input-text">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="" style=" width: 100%; "  [disabled]="this.isDisabled1" value="{{userDetail.address}}">
+            </mat-form-field>
+            </div>
+        
+            <div class="input" *ngIf="save1">
+              <mat-form-field appearance="outline" class="input-text">
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="" style=" width: 100%;  "  [disabled]="this.isDisabled1" [formControl]="phoneControl"   >
+              </mat-form-field>
+              </div>
+
+            <div class="input"  *ngIf="edit1" >
+            <mat-form-field appearance="outline" class="input-text">
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="" style=" width: 100%; "  [disabled]="this.isDisabled1" value="{{userDetail.phone}}" >
+            </mat-form-field>
+            </div>
+        
+
+            <div class="input" *ngIf="save1">
+              <mat-form-field appearance="outline" class="input-text">
+                <mat-label>Postal Code</mat-label>
+                <input matInput placeholder="" style=" width: 100%;  "  [disabled]="this.isDisabled1" [formControl]="postalcodeControl"   >
+              </mat-form-field>
+              </div>
+
+            <div class="input" *ngIf="edit1" >
+            <mat-form-field appearance="outline" class="input-text">
+              <mat-label>Postal Code</mat-label>
+              <input matInput placeholder="" style=" width: 100%; "  [disabled]="this.isDisabled1" value="{{userDetail.postalcode}}" >
+            </mat-form-field>
+            </div>
+    </mat-card>
+
+    <mat-card style="margin: 1em;" *ngFor="let userDetail of userDetails">
+        <div style="font-size: 14px; margin: 10px;">
+            <span>CHANGE PASSWORD</span>
+            <span style="float: right;" (click)="editDetails2()" class="edit" *ngIf="edit2">EDIT</span>
+            <span style="float: right;" (click)="saveDetails2()" class="save" *ngIf="save2">SAVE</span>
+            
+        </div>
+        <div class="input"  *ngIf="save2" >
+            <mat-form-field appearance="outline" class="input-text">
+              <mat-label>Old Password</mat-label>
+              <input matInput placeholder="" style=" width: 100%;  "  [disabled]="this.isDisabled2"  [type]="hide ? 'password' : 'text'" >
+            </mat-form-field>
+            </div>
+        
+            <div class="input" *ngIf="save2"  >
+                <mat-form-field appearance="outline" class="input-text">
+                  <mat-label>New Password</mat-label>
+                  <input matInput placeholder="" style=" width: 100%; "  [disabled]="this.isDisabled2"  [type]="hide ? 'password' : 'text'" >
+                </mat-form-field>
+                </div>
+        
+            
+    </mat-card>
+    </div>
+</div>    

@@ -1,0 +1,91 @@
+<div >
+<div class="logintext ">
+    <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+    <h3>SIGNUP</h3>
+</div>
+
+<div style="text-align: center; padding-top: 5em;">
+<div class="input">
+<mat-form-field appearance="outline" class="input-text">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="" [formControl]="NameControl">
+    <mat-error *ngIf="NameControl.invalid">{{getErrorMessage1()}}</mat-error>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+</div>
+
+<div  class="input" >
+    <mat-form-field appearance="outline"  class="input-text" >
+        <mat-label>Email Address</mat-label>
+        <input matInput placeholder="" [formControl]="EmailControl" >
+        <mat-error *ngIf="EmailControl.invalid">{{getErrorMessage2()}}</mat-error>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </div>
+
+    <div  class="input">
+        <mat-form-field appearance="outline"  class="input-text">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="" [formControl]="PasswordControl" [type]="hide ? 'password' : 'text'">
+            <mat-error *ngIf="PasswordControl.invalid">{{getErrorMessage3()}}</mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
+        </div>
+
+        <div  class="input">
+            <mat-form-field appearance="outline"  class="input-text">
+                <mat-label>Conform Password</mat-label>
+                <input matInput placeholder="" [formControl]="ConformPasswordControl" [type]="hide2 ? 'password' : 'text'">
+                <mat-error *ngIf="ConformPasswordControl.invalid">{{getErrorMessage4()}}</mat-error>
+                <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+                  <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <!-- <mat-hint>Hint</mat-hint> -->
+              </mat-form-field>
+            </div>
+
+            <div  class="input">
+                <mat-form-field appearance="outline"  class="input-text">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="" [formControl]="AddressControl">
+                    <mat-error *ngIf="AddressControl.invalid">{{getErrorMessage5()}}</mat-error>
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                  </mat-form-field>
+                </div>
+
+                <div  class="input">
+                  <mat-form-field appearance="outline"  class="input-text">
+                      <mat-label>Phone Number</mat-label>
+                      <input matInput placeholder="" [formControl]="PhoneControl">
+                      <mat-error *ngIf="PhoneControl.invalid">{{getErrorMessage6()}}</mat-error>
+                      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                  </div>
+
+                <div  class="input">
+                    <mat-form-field appearance="outline"  class="input-text">
+                        <mat-label>Postal Code</mat-label>
+                        <input matInput placeholder="" [formControl]="PostalControl">
+                        <mat-error *ngIf="PostalControl.invalid">{{getErrorMessage7()}}</mat-error>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <!-- <mat-hint>Hint</mat-hint> -->
+                      </mat-form-field>
+                    </div>
+    <div style="margin-bottom: 10em;">
+        <button mat-flat-button color="primary" (click)="signup()" class="btn">SIGNUP</button>
+    </div>
+
+   
+
+
+</div>
+</div>

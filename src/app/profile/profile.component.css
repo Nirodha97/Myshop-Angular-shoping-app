@@ -1,0 +1,79 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.mat-divider {
+  border-top-color: #2962ff;
+}
+
+.btn{
+	outline: none;
+}
+
+.logintext{
+    text-align: center;
+    margin-top: 0em;
+  padding-right: 5px;
+    padding-bottom:0px;
+    color: white;
+    padding-top: 0px;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 10px;
+}
+
+.prfileText{
+  text-align: center; color: #3F51B5; 
+}
+.login-content{
+    text-align: center;
+}
+
+.mat-icon {
+    font-size: 35px;
+  }
+
+.user-card{
+    height: 150px;
+    width: 150px;
+    border: 55px !important;
+    border-radius: 100px !important;
+    border: 55px solid #000;
+   
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .user{
+    height: 150px;
+    width: 150px;
+    border: 55px !important;
+    border-radius: 100px !important;
+    border: 55px solid #000;
+  }
+
+  mat-grid-tile {
+    border-radius: 10px;
+    background-color: #3F51B5;
+  }
+
+  .grid1{
+    margin-top: 2em;
+    padding: 1em;
+    
+  }
+  

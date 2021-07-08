@@ -1,0 +1,122 @@
+
+<mat-toolbar color="primary" class="toolbar"  *ngIf="div1">
+<mat-toolbar-row>
+  <div class="input-group has-search " style="background-color: #ffffff;  border-radius: 2em; outline: none; ">
+
+    <input  type="text"
+     class="form-control " 
+     placeholder="Search" 
+     [formControl]="ItemControl"
+     aria-label="Item"
+     [matAutocomplete]="auto"
+     
+     style=" border-radius: 2em; border: none; outline: none;">
+     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn1" >
+      <mat-option *ngFor="let item of filteredItems | async" [value]="item" >
+        {{item.title}}
+      </mat-option>
+    </mat-autocomplete>
+
+    <button mat-mini-fab color="#FFFFFF" style="border: none; box-shadow: none;" class="btn" (click)="search()">
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+</mat-toolbar-row>
+</mat-toolbar>
+
+
+<!--Image slider eka-->
+<div style="padding-bottom: 10em; " [style.margin-top]="div1 ? '4em' : '0em'" >
+  <div class="wrapper"  *ngIf="div1">
+
+    <div class="item" (click)="electonics()"  >
+      <img mat-card-image src="/assets/tv.png" alt="Shoping Item" class="item_img" >
+      <div>Electronics</div>
+    </div>
+
+    <div class="item" (click)="fashion()" >
+       <img mat-card-image src="/assets/fashion.png" alt="Shoping Item" class="item_img" >
+      <div>Fashion</div>
+    </div>
+
+    <div class="item" (click)="grocery()" >
+      <img mat-card-image src="/assets/g2.png" alt="Shoping Item" class="item_img">
+      <div>Grocery</div> 
+    </div>
+
+    <div class="item" (click)="foods()">
+      <img mat-card-image src="/assets/food.png" alt="Shoping Item" class="item_img">
+      <div>Foods</div>  
+    </div>
+
+    <div class="item" (click)="furnitures()">
+      <img mat-card-image src="/assets/furniture.png" alt="Shoping Item" class="item_img">
+      <div>Furnitures</div>
+    </div>
+
+    <div class="item" (click)="toys()">
+      <img mat-card-image src="/assets/toys.png" alt="Shoping Item" class="item_img">
+      <div>Toys</div>
+    </div>
+
+    <div class="item" (click)="flowers()">
+      <img mat-card-image src="/assets/flowers.png" alt="Shoping Item" class="item_img">
+      <div>Flowers</div>
+    </div>
+
+    <div class="item" (click)="handcrafts()">
+      <img mat-card-image src="/assets/handcraft.png" alt="Shoping Item" class="item_img">
+      <div>Handcrafts</div>
+    </div>
+
+    <div class="item" (click)="gifts()">
+      <img mat-card-image src="/assets/gift.png" alt="Shoping Item" class="item_img">
+      <div>Gifts</div>
+    </div>
+
+    <div class="item" (click)="other()">
+      <img mat-card-image src="/assets/other.png" alt="Shoping Item" class="item_img">
+      <div>Other</div>
+    </div>
+  </div>
+  <div  *ngIf="div1">
+    <h3 class="item_head">All Items</h3>
+  </div>
+  <div  *ngIf="div2" style="text-align: center;">
+    <mat-toolbar class="item_category" >
+    <button mat-icon-button  class="backbutton" (click)="home()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span ></span>
+    <span style="font-size: large;">{{x}}</span>
+  </mat-toolbar>
+  <div style="padding: 2em;"></div>
+  </div>
+
+
+
+  <div style="margin: 5px;">
+  <mat-grid-list cols=2 gutterSize="10px" style="text-align: center;" >
+    <mat-grid-tile *ngFor="let item of itemsToShow" style="background-color: rgb(255, 255, 255); border-radius: 5px; "  >
+      <mat-card-content  >
+        <mat-list  >
+            <mat-list-item (click)="view(item)" >
+                <p matLine>
+                  <img mat-card-image src="{{item.photo}}" alt="Shoping Item" style="height: 120px; width: 150px; border-radius: 5px;">
+                </p>
+                <p matLine>
+                  <mat-card-title class="item_title">{{item.title}}</mat-card-title>
+                </p>
+                <p matLine>
+                    <span class="price" >Rs. <span >{{item.price}}</span></span> 
+                </p>
+                <!-- 0714069253 sathrasinha -->
+            </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+  
+</div>

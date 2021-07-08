@@ -1,0 +1,85 @@
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" mode="side"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+      <div style="background-color:#3F51B5">
+        
+    <mat-toolbar color="primary">
+      <div >
+      <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      style="top: -5px;"
+      (click)="home(drawer)"
+       class="example-icon btn">
+      <mat-icon >home</mat-icon>
+    </button>
+    <span style="font-size: medium; padding: 1em;">Home</span>
+      </div>
+      
+    </mat-toolbar>
+  </div>
+
+  <div>
+    <mat-nav-list >
+      <a mat-list-item  (click)="mycart(drawer)"   style="color: #3F51B5;">
+        <mat-icon>shopping_cart</mat-icon>
+       <span style="padding: 1em;">My Cart</span> 
+      </a>
+      <a mat-list-item  (click)="notification(drawer)"  style="color: #3F51B5;">
+        <mat-icon>notifications</mat-icon>
+        <span style="padding: 1em;">Notifications</span>
+      </a>
+      <a mat-list-item  (click)="profile(drawer)"  style="color: #3F51B5;">
+        <mat-icon>persony</mat-icon>
+        <span style="padding: 1em;">My Profile</span>
+      </a>
+      <a mat-list-item  (click)="addnew(drawer)"  style="color: #3F51B5;">
+        <mat-icon>add_circle</mat-icon>
+        <span style="padding: 1em;">Add New Item</span>
+      </a>
+      <hr/>
+      <a mat-list-item (click)="help(drawer)"  style="color: #3F51B5;">
+        <mat-icon>help</mat-icon>
+        <span style="padding: 1em;">Help</span>
+      </a>
+      <a mat-list-item  (click)="rate(drawer)"  style="color: #3F51B5;">
+        <mat-icon>rate_review</mat-icon>
+        <span style="padding: 1em;">Rate this App</span>
+      </a>
+      <a mat-list-item  (click)="info(drawer)"  style="color: #3F51B5;">
+        <mat-icon>info</mat-icon>
+        <span style="padding: 1em;">About</span>
+      </a>
+    </mat-nav-list>
+  </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async" class="example-icon btn">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+     <h1 >My Shop</h1>
+     <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon btn" (click)="notification2()" >
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon btn" (click)="mycart2()" >
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    </mat-toolbar>
+    
+    <!-- Add Content Here -->
+    
+    <router-outlet></router-outlet>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>

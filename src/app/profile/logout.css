@@ -1,0 +1,9 @@
+.btn:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  .btn{
+	outline: none;
+   color: green;
+}

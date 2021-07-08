@@ -1,0 +1,29 @@
+.logintext{
+    text-align: center;
+    background-color:#3F51B5 ;
+   margin-top: 0px;
+    padding-bottom:0px;
+    padding-top: 10px;
+    color: white;
+
+    position: fixed;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.login-content{
+    text-align: center;
+}
+
+.input-text{
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+}
+.login_btn{
+    background-color:#3F51B5 ;
+    color: white;
+    border-color:#3F51B5 ;
+}

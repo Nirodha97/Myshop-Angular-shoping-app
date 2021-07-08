@@ -1,0 +1,62 @@
+<div class="logintext" >
+    <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+    <h3>MY CART</h3>
+</div>
+
+
+<div style="text-align: center; padding-left: 1em; padding-right: 1em; padding-top: 4em; margin-bottom: 15em;">
+    <div class="alert alert-info" *ngIf="div1">Your Cart is Empty.</div>
+    <div  *ngIf="!!getCartDetails && getCartDetails.length">
+        
+    <mat-card  *ngFor="let getCartDetail of getCartDetails"  style="margin-bottom: 1em; " >
+        <div class="card-container" > 
+            <mat-card-title ><h3>{{getCartDetail.title1 }}</h3> </mat-card-title>
+            <!-- <mat-checkbox class="example-margin" color="primary" style="margin-right: 0px;"></mat-checkbox> -->
+        </div>
+        
+        <div class="card-container" style="margin-top: -2em;"> 
+            <div>
+                <mat-card-title >
+                <div >
+                <button mat-icon-button color="primary" class="btn" style="font-size: 20px;" (click)="minus(getCartDetail.id1,getCartDetail.qnt1)">
+                    <mat-icon>indeterminate_check_box</mat-icon>
+                  </button>
+                  <input type="button" class="btn" [value]="getCartDetail.qnt1" >
+                  <button mat-icon-button color="primary" class="btn" style="font-size: 20px;" (click)="plus(getCartDetail.id1,getCartDetail.qnt1)" >
+                    <mat-icon>add_box</mat-icon>
+                  </button>
+                 
+                </div>
+                </mat-card-title>
+                <h3><span>Rs.</span><span>{{getCartDetail.price1}}.00</span> </h3> 
+                <div style="display: flex; float: left;">
+                    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" class="btn" (click)="openDialog(getCartDetail.id1)" style="text-align: center;">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                      
+                </div>
+                 
+          
+                </div>
+          
+            <img mat-card-image src="{{getCartDetail.photo}}" alt="Shoping Item" style="height: 100px; width: 120px; margin-right: 2em;">
+        </div>
+    
+      </mat-card>
+      
+    </div>
+    
+</div>
+
+<div>
+    <div style=" position: fixed; width: 100%; bottom: 4em; background-color: white;">
+        <p >
+            <span class="next" style="font-size: 16px; display: flex; float: left; padding: 0.5em;">Total price    :</span>
+            <span class="next" style="font-size: 16px; display: flex; float: right; padding: 0.5em;">Rs. <span>{{this.total}}</span>.00</span>
+        </p>
+     
+        <button mat-flat-button  class="checkout-button btn" style=" padding: 0.5em; background-color: #3F51B5; color: white; border-radius: 0;" (click)="openChekout()">CHECK OUT</button>
+    </div>
+
+</div>
+

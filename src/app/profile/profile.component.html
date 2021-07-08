@@ -1,0 +1,99 @@
+<div >
+<div class="logintext">
+    <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+    <div style="display: flex; float: right; padding: 1em;">
+      <button mat-icon-button color="primary" class="btn" style="padding-right: 1em;" (click)="userdata()" >
+        <mat-icon style="font-size: 30px;">manage_accounts</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" class="btn" (click)="logout()" >
+        <mat-icon style="font-size: 30px;">logout</mat-icon>
+      </button> 
+    </div>
+</div>
+
+<!-- <div style="  text-align: right; margin-right: 1em; position: fixed;" >
+    <button mat-icon-button color="primary" class="btn" style="padding-right: 1em;" >
+        <mat-icon>manage_accounts</mat-icon>
+      </button>
+    <button mat-icon-button color="primary" class="btn" (click)="logout()" >
+        <mat-icon>logout</mat-icon>
+      </button> 
+</div> -->
+</div>
+<div style="padding-top: 3em;" >
+<div style="align-items: center; justify-content: center;"> 
+    <mat-card class="user-card">
+            <img class="user" mat-card-image src="/assets/user1.png" alt="Shoping Item" style="height: 150px; width: 150px;">
+    </mat-card>
+    <div class="prfileText">
+      <h3 style="font-weight: 500;">{{this.name}}</h3>
+    </div>
+   
+</div>
+
+
+<mat-accordion>
+  
+  <div style="margin: 20px; ">
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false" style="padding-top: 1em; padding-bottom: 1em;">
+    <mat-expansion-panel-header >
+      <mat-panel-title style="color: #3F51B5; font-size: 16px;" >
+        My Oders
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card style="background-color:  #4365fca8; color: white; margin-bottom: 5px;" *ngFor="let order of orderitems" (click)="viewOrderItem(order)" >
+      <div >
+        <!-- <span>{{order.oid}}</span> -->
+        <span  style="padding-left: 0em;">{{order.title}}</span>
+        <span  style="float: right; background-color: white;  color: #2962ff; border-radius: 3px; width: 25px; height: 20px; text-align: center;">{{order.qnt}}</span>
+      </div>
+      <div  style="font-size: 12px; text-align: left;" >{{order.date}}</div>
+      </mat-card>
+  
+  </mat-expansion-panel>
+</div>
+
+<div style="margin: 20px; ">
+ <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false" style="padding-top: 1em; padding-bottom: 1em;">
+    <mat-expansion-panel-header>
+      <mat-panel-title style="color: #3F51B5; font-size: 16px;" >
+        My Products
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-card style="background-color:  #4365fca8; color: white; margin-bottom: 5px;" *ngFor="let useritem of useritems" (click)="editItem(useritem)" >
+    <div>
+      <span>{{useritem.id}}</span>
+      <span  style="padding-left: 1em;">{{useritem.title}}</span>
+    </div>
+    <div  style="font-size: 12px; text-align: left;" >{{useritem.date}}</div>
+    </mat-card>
+
+  </mat-expansion-panel>
+</div>
+
+<div style="margin: 20px;padding-bottom: 5em;">
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false" style="padding-top: 1em; padding-bottom: 1em;">
+    <mat-expansion-panel-header >
+      <mat-panel-title style="color: #3F51B5; font-size: 16px;" >
+        My Store
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-card style="background-color:  #4365fca8 ; color: white; margin-bottom: 5px;" *ngFor="let sellingitem of sellingitems" (click)="viewSellingItem(sellingitem)" >
+      <div>
+        <!-- <span>{{order.oid}}</span> -->
+        <span  style="padding-left: 0em;">{{sellingitem.title}}</span>
+        <span  style="float: right; background-color: white;  color: #2962ff; border-radius: 3px; width: 25px; height: 20px; text-align: center;">{{sellingitem.qnt}}</span>
+      </div>
+      <div  style="font-size: 12px; text-align: left;" >{{sellingitem.date}}</div>
+      </mat-card>
+  
+  </mat-expansion-panel>
+</div>
+  
+</mat-accordion>
+    
+</div>

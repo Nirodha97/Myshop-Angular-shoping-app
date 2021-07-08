@@ -1,0 +1,47 @@
+.logintext{
+    text-align: center;
+    background-color:#3F51B5 ;
+    padding-top: 2px;
+    padding-bottom:0px;
+    color: white;
+    margin-top: -1px;
+    height: 2.5em;
+z-index: 1;
+    position: fixed;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.login-content{
+    text-align: center;
+}
+
+.checkout-button
+{
+   width: 100%;
+  
+}
+
+.example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+
+
+  .card-container {
+   
+    display: flex;
+    justify-content: space-between;
+  }
+  

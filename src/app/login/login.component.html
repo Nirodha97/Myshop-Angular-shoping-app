@@ -1,0 +1,42 @@
+<div>
+<div class="logintext">
+    <!-- <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> -->
+    <h3>LOGIN</h3>
+</div>
+
+<div style="text-align: center; padding-top: 5em;">
+<div class="input">
+<mat-form-field appearance="outline" class="input-text">
+    <mat-label>Email Address</mat-label>
+    <input matInput  placeholder="example@gmail.com" [formControl]="loginEmail">
+    <mat-error *ngIf="loginEmail.invalid">{{getErrorMessage1()}}</mat-error>
+    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+</div>
+
+<div  class="input">
+    <mat-form-field appearance="outline" class="input-text">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="example" [formControl]="loginPassword" [type]="hide ? 'password' : 'text'">
+        <mat-error *ngIf="loginPassword.invalid">{{getErrorMessage2()}}</mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+        <!-- <mat-hint>Hint</mat-hint> -->
+      </mat-form-field>
+    </div>
+
+    <div>
+        <button mat-flat-button class="login_btn btn" (click)="login()">LOGIN</button>
+       
+    </div>
+
+    <div style="margin-top: 1em;">
+        Don't you have an account?  <span (click)="register()" style="color: #2962ff;">SIGNUP</span>
+    </div>
+
+
+
+</div></div>

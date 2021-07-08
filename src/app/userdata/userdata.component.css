@@ -1,0 +1,37 @@
+.logintext{
+    
+    text-align: center;
+    background-color:#3F51B5 ;
+    padding-top: 2px;
+    padding-bottom:0px;
+    color: white;
+    margin-top: -1px;
+    height: 2.5em;
+z-index: 1;
+    position: fixed;
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; 
+}
+
+.login-content{
+    text-align: center;
+}
+
+.input-text{
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+}
+
+
+.edit{
+    color:#3F51B5 ;
+}
+.save{
+    color: green;
+}
+/* .edit:hover{
+    color: rgb(161, 167, 170);
+} */

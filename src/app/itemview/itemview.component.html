@@ -1,0 +1,46 @@
+
+<mat-toolbar color="primary" class="toolbar" >
+    <mat-toolbar-row>
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="home()"
+       class="btn">
+      <mat-icon aria-label="Side nav toggle icon">arrow_back</mat-icon>
+    </button>
+   <h1 >My Shop</h1>
+   <span class="example-spacer"></span>
+  <button mat-icon-button class="btn" (click)="notification()"  >
+    <mat-icon>notifications</mat-icon>
+  </button>
+  <button mat-icon-button class="btn" (click)="mycart()" >
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+  </mat-toolbar-row>
+  </mat-toolbar>
+ 
+<div class="card" >
+ <mat-card class="example-card">
+    <img mat-card-image src="{{this.photo}}" alt="Photo of a Shiba Inu">
+    
+    <mat-card-content>
+     <div style="font-weight: 500; font-size: x-large; padding-top: 1em; ">{{this.title}}</div>
+     <div style="font-weight: 400; font-size: x-large; color: green; padding-top: 0.5em ">Rs. {{this.price}}</div><hr>
+     <div>{{this.description}}</div>
+     <div  style="font-weight: 400; font-size: 16px; padding-top: 0.5em; ">Category :&nbsp;&nbsp; {{this.category}}</div>
+     <div style="font-weight: 400; font-size: 16px; padding-top: 0.5em; ">Brand :&nbsp;&nbsp; {{this.brand}}</div>
+     <div style="font-weight: 400; font-size: 16px; padding-top: 0.5em; "><span>Seller :&nbsp;&nbsp; {{this.username}}&nbsp;&nbsp;</span></div>
+     <div style="font-weight: 400; font-size: 16px; padding-top: 0.5em; "><span>Contact :&nbsp;&nbsp; {{this.userphone}}&nbsp;&nbsp;</span></div>
+  
+    </mat-card-content>
+  </mat-card>
+</div>
+
+  <div class="bottom_div" style="margin-bottom: 3em;padding-right: 1em; padding-left: 1em;" >
+    <mat-toolbar class="paricebar" >
+        <div class="price"> <span>Rs.</span><span>{{this.price}}</span></div>
+        <button mat-flat-button class="btn2 btn" (click)="addToCart()">ADD TO CART</button>
+       
+      </mat-toolbar>
+ </div>

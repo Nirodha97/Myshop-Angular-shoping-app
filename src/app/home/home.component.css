@@ -1,0 +1,168 @@
+
+.example-card {
+  max-width: 160px;
+ text-align: center;
+}
+
+input.form-control:focus {
+  box-shadow: none;
+}
+
+.backbutton{
+  margin-right: 2em;
+  outline: none;
+}
+
+.toolbar{
+  position: fixed;
+  top: 2.8em;
+  margin-top: -1px;
+  z-index: 1000;
+  display: flex;
+ 
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+ 
+  .mat-divider {
+    border-top-color: #2962ff;
+}
+
+.toolbarNav{  
+  position: fixed;
+  bottom: 0; 
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  background-color: white;
+
+-webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+-moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+ box-shadow:        2px 2px 4px 5px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+.material-icon.color_blue:hover  { 
+  
+  color: #2962FF;
+  font-size: 45px;
+ 
+  
+}
+
+
+
+.material-icon {
+  font-size: 40px;
+  padding-bottom: 1em;
+  color: #3F51B5;
+  
+}
+
+.item_head{
+  text-align: center;
+  color: #3F51B5;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.item{
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+ font-size: small;
+ 
+}
+
+.item_img{
+  height: 40px; 
+  width: 40px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.item_title{
+  font-size:small;
+}
+
+.item_category{
+  background-color: #3F51B5;
+  color: white;
+  position: fixed;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  margin-top: -10px;
+  padding-bottom: -10px;
+  font-weight: 400;
+  height: 2.5em;
+  border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+ 
+}
+
+.price{
+  color: green;
+  font-size: small;
+}
+
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.btn{
+	outline: none;
+}
+
+
+.wrapper{
+  max-height: 120px;
+  border: 1px solid #fff;
+  display: flex;
+  overflow-x: auto;
+ 
+}
+
+.wrapper ::-webkit-scrollbar{
+  width: 0px;
+}
+
+.wrapper .item{
+  min-width: 100px;
+  height: 80px;
+  line-height: 30px;
+  text-align: center;
+  background-color:#3F51B5;
+  margin: 3px;
+  color: rgb(255, 255, 255);
+}
+.mat-card-image:first-child{
+  margin: 0px;
+}
+
