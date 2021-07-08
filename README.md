@@ -1,5 +1,6 @@
 # Myshop
 
+This is an Android Application created using Angular and Node.js. It can be use to sell and buy products.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
 ## Development server
